@@ -1,0 +1,114 @@
+/* ============================================================
+   iTradeZA C2C E-Commerce Platform – Custom Styles
+   ============================================================ */
+
+/* ── Global ─────────────────────────────────────────────────── */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+main, .container { flex: 1; }
+footer { margin-top: auto; }
+
+a { color: #198754; }
+a:hover { color: #146c43; }
+
+/* ── Navbar ─────────────────────────────────────────────────── */
+.navbar-brand i { font-size: 1.4rem; }
+
+/* ── Product Cards ──────────────────────────────────────────── */
+.product-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+.product-card .card-img-top {
+    border-bottom: 1px solid #eee;
+}
+
+/* ── Category Cards ─────────────────────────────────────────── */
+.category-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.category-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(25,135,84,0.15);
+}
+
+/* ── Hero Banner ────────────────────────────────────────────── */
+.hero-banner {
+    background-size: cover;
+    position: relative;
+}
+.hero-banner::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.15);
+    z-index: 0;
+}
+.hero-banner > .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.btn-success {
+    background-color: #198754;
+    border-color: #198754;
+}
+.btn-success:hover {
+    background-color: #146c43;
+    border-color: #146c43;
+}
+
+/* ── Admin Sidebar ──────────────────────────────────────────── */
+.sidebar .nav-link {
+    color: #333;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 2px;
+}
+.sidebar .nav-link:hover {
+    background-color: #198754;
+    color: #fff;
+}
+.sidebar .nav-link i { margin-right: 8px; }
+
+/* ── Chat Bubbles ───────────────────────────────────────────── */
+#chatBox .bg-success {
+    border-radius: 18px 18px 4px 18px;
+}
+#chatBox .bg-light {
+    border-radius: 18px 18px 18px 4px;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 576px) {
+    .hero-banner h1 { font-size: 1.6rem; }
+    .hero-banner .lead { font-size: 0.95rem; }
+    .product-card .card-title { font-size: 0.85rem; }
+}
+
+@media (max-width: 768px) {
+    .sidebar { display: none !important; }
+}
+
+/* ── Misc ───────────────────────────────────────────────────── */
+.badge { font-weight: 500; }
+.table th { white-space: nowrap; }
+.product-thumb:hover { opacity: 0.7; }
+.form-control:focus, .form-select:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.2rem rgba(25,135,84,0.25);
+}
