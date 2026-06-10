@@ -16,3 +16,6 @@ uploads/profiles/*
 # OS
 .DS_Store
 Thumbs.db
+
+# Java build output
+patel-hardware/target/

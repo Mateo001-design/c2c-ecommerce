@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Patel Hardware</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('') no-repeat center center fixed;
+            background-size: cover;
+            background-color: #333;
+        }
+        .overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 0;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 500px;
+            margin: 80px auto;
+            background: rgba(200,200,200,0.85);
+            padding: 40px;
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #00cc00;
+            font-size: 36px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            color: #006600;
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 15px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .register-btn {
+            width: 100%;
+            padding: 15px;
+            margin-top: 20px;
+            background-color: #cc0000;
+            color: white;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .register-btn:hover {
+            background-color: #990000;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .login-link a {
+            color: #006600;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <h1 style="position:relative; z-index:1; text-align:center; color:#00cc00; margin-top:20px;">PATEL HARDWARE</h1>
+    <div class="container">
+        <form action="register" method="post">
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Enter your username" required>
+
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit" class="register-btn">Register</button>
+        </form>
+        <div class="login-link">
+            <p>Already registered? <a href="login.html">Login here</a></p>
+        </div>
+    </div>
+</body>
+</html>
