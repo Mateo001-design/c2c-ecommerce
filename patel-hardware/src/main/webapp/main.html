@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patel Hardware - Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .navbar {
+            background-color: #0066cc;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin-right: 25px;
+            font-size: 16px;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+        }
+        .search-box input {
+            padding: 8px 12px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            width: 200px;
+        }
+        .search-box button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+        .content {
+            padding: 30px 50px;
+        }
+        h2 {
+            color: #006600;
+            font-size: 28px;
+        }
+        .menu-table {
+            border: 2px solid #66cccc;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .menu-table a {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-block;
+            margin: 10px 40px 10px 0;
+        }
+        .menu-table a:hover {
+            text-decoration: underline;
+        }
+        .logout-btn {
+            padding: 8px 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .logout-btn:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <div>
+            <a href="main.html">Home</a>
+            <a href="viewall.html">View All Items</a>
+            <a href="buy.html">Buy an Item</a>
+            <a href="viewcart.html">View Cart</a>
+        </div>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search Items">
+            <button onclick="searchItems()">&#128269;</button>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+        <h2>Patel Hardware</h2>
+        <p><b>Welcome to the Patel hardware web application. Please select one of the options below:</b></p>
+
+        <div class="menu-table">
+            <table>
+                <tr>
+                    <td><a href="main.html">Main Menu</a></td>
+                    <td><a href="viewall.html">View all Items</a></td>
+                </tr>
+                <tr>
+                    <td><a href="buy.html">Buy an Item</a></td>
+                    <td><a href="viewcart.html">View Cart</a></td>
+                </tr>
+            </table>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script>
+        // Search items function
+        function searchItems() {
+            var query = document.getElementById('searchInput').value;
+            if (query.trim() !== '') {
+                window.location.href = 'search.html?query=' + encodeURIComponent(query);
+            }
+        }
+
+        // Handle Enter key in search box
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchItems();
+            }
+        });
+
+        // Logout function
+        function logout() {
+            fetch('api/main', {
+                method: 'POST'
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                window.location.href = 'index.html';
+            })
+            .catch(function(error) {
+                window.location.href = 'index.html';
+            });
+        }
+    </script>
+</body>
+</html>
